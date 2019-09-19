@@ -1,0 +1,70 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.lineHeight": 25,
+    "window.zoomLevel": 0,
+    "editor.fontSize": 10,
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    // "editor.formatOnPaste": true,
+    "workbench.statusBar.feedback.visible": false,
+    "editor.minimap.enabled": false,
+    "workbench.activityBar.visible": false,
+    "search.location": "panel",
+    "files.trimTrailingWhitespace": true,
+    "phpcs.standard": "PSR2",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "fontStyle": "italic",
+                }
+            }
+        ],
+        "[Slime]": {
+            "comments": "#535353",
+            "variables": "#59725a",
+            "textMateRules": [
+                {
+                    "scope": "variable.name",
+                    "settings": {
+                        "foreground": "#59725a",
+                    }
+                },
+                {
+                    "scope": "variable",
+                    "settings": {
+                        "foreground": "#59725a"
+                    }
+                },
+            ]
+        },
+        "[DuoTone Dark Forest]": {
+            // "strings": "#3e88ad",
+            // "strings": "#4e6f80",
+            "strings": "#556f7d",
+            "textMateRules": [
+                {
+                    "scope":"punctuation",
+                    "settings": {
+                        "foreground": "#5d7a60",
+                    }
+                }
+            ],
+        }
+    },
+    "php-cs-fixer.executablePath": "/Users/mettrrltd/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs",
+    "php-cs-fixer.lastDownload": 1530547044377,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "editor.renderWhitespace": "none",
+    "breadcrumbs.enabled": true,
+    // "files.insertFinalNewline": true,
+    "phpcs.executablePath": "/Users/mettrrltd/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs",
+    "workbench.colorTheme": "DuoTone Dark Forest",
+    "go.formatTool": "goimports",
+    "workbench.statusBar.visible": false,
+    // "workbench.editor.enablePreview": false
+ }
+
