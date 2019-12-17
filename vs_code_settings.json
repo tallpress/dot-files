@@ -1,16 +1,21 @@
 {
     "files.autoSave": "onFocusChange",
-    "editor.lineHeight": 25,
-    "window.zoomLevel": 0,
+    "editor.lineHeight": 24,
+    "window.zoomLevel": 2,
     "editor.fontSize": 10,
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
     // "editor.formatOnPaste": true,
-    "workbench.statusBar.feedback.visible": false,
+    // "workbench.statusBar.feedback.visible": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background" : "#1A1A1A",
+        "statusBar.noFolderBackground" : "#212121",
+        "statusBar.debuggingBackground": "#263238"
+    },
     "editor.minimap.enabled": false,
     "workbench.activityBar.visible": false,
     "search.location": "panel",
-    "files.trimTrailingWhitespace": true,
+    // "files.trimTrailingWhitespace": true,
     "phpcs.standard": "PSR2",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -60,11 +65,41 @@
     },
     "editor.renderWhitespace": "none",
     "breadcrumbs.enabled": true,
-    // "files.insertFinalNewline": true,
-    "phpcs.executablePath": "/Users/mettrrltd/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs",
+    "files.insertFinalNewline": true,
     "workbench.colorTheme": "DuoTone Dark Forest",
     "go.formatTool": "goimports",
-    "workbench.statusBar.visible": false,
+    "workbench.statusBar.visible": true,
+    "material-icon-theme.showWelcomeMessage": false,
+    "extensions.ignoreRecommendations": false,
+    "material-icon-theme.saturation": 1,
+    "material-icon-theme.folders.theme": "none",
+    "material-icon-theme.activeIconPack": "",
     // "workbench.editor.enablePreview": false
- }
-
+    // "editor.rulers": [80]
+    "workbench.settings.openDefaultKeybindings": true,
+    "files.exclude": {
+        "**/.git": true
+},
+"cSpell.userWords": [
+    "Optimisation",
+    "Postgres",
+    "assetsvc",
+    "boto",
+    "datetime",
+    "jmoiron",
+    "jsonb",
+    "limejump",
+    "mitchellh",
+    "mpan",
+    "postgresql",
+    "psql",
+    "rabbitmq",
+    "sqlx",
+    "strftime",
+    "structs",
+    "tomallpress",
+    "tstzrange",
+    "ufffd",
+    "unparsed"
+]
+}
