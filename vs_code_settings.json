@@ -1,7 +1,7 @@
 {
     "files.autoSave": "onFocusChange",
-    "editor.lineHeight": 24,
-    "window.zoomLevel": 2,
+    "editor.lineHeight": 22,
+    "window.zoomLevel": 0,
     "editor.fontSize": 10,
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
@@ -13,9 +13,9 @@
         "statusBar.debuggingBackground": "#263238"
     },
     "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
     "workbench.activityBar.visible": false,
-    "search.location": "panel",
-    // "files.trimTrailingWhitespace": true,
+    "files.trimTrailingWhitespace": true,
     "phpcs.standard": "PSR2",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -45,9 +45,9 @@
             ]
         },
         "[DuoTone Dark Forest]": {
-            // "strings": "#3e88ad",
-            // "strings": "#4e6f80",
+            // "strings": "#11efff",
             "strings": "#556f7d",
+            // current ^
             "textMateRules": [
                 {
                     "scope":"punctuation",
@@ -58,16 +58,19 @@
             ],
         }
     },
-    "php-cs-fixer.executablePath": "/Users/mettrrltd/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs",
-    "php-cs-fixer.lastDownload": 1530547044377,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
     "editor.renderWhitespace": "none",
     "breadcrumbs.enabled": true,
     "files.insertFinalNewline": true,
-    "workbench.colorTheme": "DuoTone Dark Forest",
+    "workbench.colorTheme": "DuoTone Dark Earth",
     "go.formatTool": "goimports",
+    // new stuff
+    "go.lintTool":"golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
     "workbench.statusBar.visible": true,
     "material-icon-theme.showWelcomeMessage": false,
     "extensions.ignoreRecommendations": false,
@@ -81,25 +84,49 @@
         "**/.git": true
 },
 "cSpell.userWords": [
+    "Kubernetes",
     "Optimisation",
     "Postgres",
+    "Vals",
+    "amazonaws",
+    "amqp",
     "assetsvc",
     "boto",
+    "circleci",
     "datetime",
+    "dynamodb",
+    "dynamodbattribute",
+    "entrypoint",
+    "istio",
     "jmoiron",
     "jsonb",
     "limejump",
     "mitchellh",
+    "mkdir",
     "mpan",
+    "msgs",
+    "openapi",
+    "overriden",
     "postgresql",
+    "preprod",
     "psql",
     "rabbitmq",
+    "sluggy",
     "sqlx",
+    "streadway",
     "strftime",
     "structs",
+    "templetor",
+    "tmps",
     "tomallpress",
     "tstzrange",
     "ufffd",
-    "unparsed"
+    "unmarshalling",
+    "unparsed",
+    "uuid"
+],
+"cSpell.enableFiletypes": [
+    "pgsql"
 ]
 }
+
