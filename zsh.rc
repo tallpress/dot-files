@@ -112,7 +112,7 @@ export CTEST_OUTPUT_ON_FAILURE=1
 export AUTO_SIGN_KEY=~/go/src/bitbucket.org/automata_tech/automata_go/common/docs/eva-cert-key
 export AUTO_CERTS_CHAIN=/Users/tom/automata/keys/deploy/tom.chain
 
-export CIRCLECI_CLI_TOKEN=511260c4e6c685c4d191888bf4db06198fb70a4a
+export CIRCLECI_CLI_TOKEN
 # z script
 . /usr/local/etc/profile.d/z.sh
 export GO_PATH=~/go
