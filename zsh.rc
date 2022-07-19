@@ -98,6 +98,8 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zshconfig="vi ~/.zshrc"
+alias weather="curl wttr.in"
+alias moon="curl wttr.in/moon"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Pure theme
@@ -110,8 +112,10 @@ export CTEST_OUTPUT_ON_FAILURE=1
 export AUTO_SIGN_KEY=~/go/src/bitbucket.org/automata_tech/automata_go/common/docs/eva-cert-key
 export AUTO_CERTS_CHAIN=/Users/tom/automata/keys/deploy/tom.chain
 
-
+export CIRCLECI_CLI_TOKEN=511260c4e6c685c4d191888bf4db06198fb70a4a
 # z script
 . /usr/local/etc/profile.d/z.sh
 export GO_PATH=~/go
 export PATH=$PATH:/$GO_PATH/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
