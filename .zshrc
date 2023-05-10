@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vi ~/.zshrc"
 alias weather="curl wttr.in"
 alias moon="curl wttr.in/moon"
+alias ddiff="git diff --no-index"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Pure theme
@@ -112,10 +113,17 @@ export CTEST_OUTPUT_ON_FAILURE=1
 export AUTO_SIGN_KEY=~/go/src/bitbucket.org/automata_tech/automata_go/common/docs/eva-cert-key
 export AUTO_CERTS_CHAIN=/Users/tom/automata/keys/deploy/tom.chain
 
-export CIRCLECI_CLI_TOKEN
+export CIRCLECI_CLI_TOKEN=511260c4e6c685c4d191888bf4db06198fb70a4a
 # z script
 . /usr/local/etc/profile.d/z.sh
 export GO_PATH=~/go
-export PATH=$PATH:/$GO_PATH/bin
-
+export PATH=$PATH:/$GO_PATH/bin:~/google-cloud-sdk/bin
+set -o vi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tom/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tom/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tom/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tom/google-cloud-sdk/completion.zsh.inc'; fi
+

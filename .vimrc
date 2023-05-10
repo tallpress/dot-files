@@ -31,6 +31,7 @@ set t_Co=256
 set t_ut=
 let g:codedark_conservative = 1
 colorscheme codedark
+" colorscheme desert
 
 
 :set cursorline
@@ -50,7 +51,7 @@ set nobackup
 " fzf mapping to control p
 nmap <C-P> :FZF<CR>
 " Nerdtree toggleing
-nmap <C-N> :NERDTreeToggle<CR>
+nmap <C-\> :NERDTreeToggle<CR>
 "
 nnoremap H gT
 nnoremap L gt
@@ -74,4 +75,16 @@ endif
 
 " disable mouse integration
 set mouse=
+
+
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" " when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" " On pressing tab, insert 4 spaces
+set expandtab
+
+set spell
+
 

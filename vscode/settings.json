@@ -15,41 +15,10 @@
             {
                 "scope": "comment",
                 "settings": {
-                    "fontStyle": "italic",
+                    "fontStyle": "italic"
                 }
             }
-        ],
-        "[Slime]": {
-            "comments": "#535353",
-            "variables": "#59725a",
-            "textMateRules": [
-                {
-                    "scope": "variable.name",
-                    "settings": {
-                        "foreground": "#59725a",
-                    }
-                },
-                {
-                    "scope": "variable",
-                    "settings": {
-                        "foreground": "#59725a"
-                    }
-                },
-            ]
-        },
-        "[DuoTone Dark Forest]": {
-            // "strings": "#11efff",
-            "strings": "#556f7d",
-            // current ^
-            "textMateRules": [
-                {
-                    "scope": "punctuation",
-                    "settings": {
-                        "foreground": "#5d7a60",
-                    }
-                }
-            ],
-        }
+        ]
     },
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
@@ -67,7 +36,6 @@
     "gopls": {
         "experimentalWorkspaceModule": true,
     },
-    "workbench.statusBar.visible": true,
     "material-icon-theme.showWelcomeMessage": false,
     "extensions.ignoreRecommendations": false,
     "material-icon-theme.saturation": 1,
@@ -80,6 +48,7 @@
         "**/.git": true
     },
     "cSpell.userWords": [
+        "ALLOC",
         "Allpress",
         "amazonaws",
         "amqp",
@@ -92,6 +61,9 @@
         "cmdutils",
         "Configurator",
         "datetime",
+        "DEALLOC",
+        "Deallocate",
+        "Deallocation",
         "dynamodb",
         "dynamodbattribute",
         "entrypoint",
@@ -106,12 +78,16 @@
         "gpio",
         "GRPC",
         "igraph",
+        "initialised",
+        "interruptor",
         "istio",
         "jmoiron",
         "jsonb",
         "Kubernetes",
+        "liconic",
         "limejump",
         "Lims",
+        "logrus",
         "mitchellh",
         "mkdir",
         "mpan",
@@ -128,13 +104,18 @@
         "pqueue",
         "preprod",
         "protobuf",
+        "protocoldesign",
         "protocoldesigncontracts",
         "psql",
+        "pydantic",
         "pytest",
         "Pythonista",
         "rabbitmq",
         "regexs",
         "RUBIX",
+        "runtimeconfigcontracts",
+        "scara",
+        "scaras",
         "schedulercontracts",
         "sdgs",
         "sdos",
@@ -169,6 +150,7 @@
         "wlan",
         "Workcell",
         "workcells",
+        "workflowcontracts",
         "wscontracts",
         "wspace",
         "wspaces"
@@ -180,25 +162,121 @@
     "editor.minimap.enabled": false,
     "editor.matchBrackets": false,
     "go.toolsManagement.autoUpdate": true,
-    // "editor.formatOnSave": true,
     "eslint.format.enable": true,
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2 }",
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
+        "*.ipynb": "jupyter.notebook.ipynb",
+        "*.png": "editor.excalidraw"
     },
-    "files.autoSave": "onFocusChange",
     "cmake.configureOnOpen": false,
     "yaml.schemas": {
-        "file:///Users/tom/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///Users/tom/.vscode/extensions/atlassian.atlascode-3.0.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.bitbucket.enabled": true,
     "atlascode.jira.enabled": false,
     "redhat.telemetry.enabled": true,
     "atlascode.bitbucket.explorer.refreshInterval": 5,
-    "workbench.activityBar.visible": false,
     "editor.inlineSuggest.enabled": true,
-    "workbench.colorTheme": "GitHub Light",
+    "workbench.colorTheme": "Visual Studio Dark",
     "workbench.startupEditor": "none",
     "editor.bracketPairColorization.enabled": false,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "go": true
+    },
+    "git.mergeEditor": false,
+    "editor.stickyScroll.enabled": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
+    },
+    "pddlParser.executableOrService": "/Users/tom/Library/Application Support/Code/User/globalStorage/jan-dolejsi.pddl/val/Val-20210401.1-Darwin/bin/Parser",
+    "pddl.validatorPath": "/Users/tom/Library/Application Support/Code/User/globalStorage/jan-dolejsi.pddl/val/Val-20210401.1-Darwin/bin/Validate",
+    "pddl.valueSeqPath": "/Users/tom/Library/Application Support/Code/User/globalStorage/jan-dolejsi.pddl/val/Val-20210401.1-Darwin/bin/ValueSeq",
+    "pddl.valStepPath": "/Users/tom/Library/Application Support/Code/User/globalStorage/jan-dolejsi.pddl/val/Val-20210401.1-Darwin/bin/ValStep",
+    "pddl.selectedPlanner": "http://solver.planning.domains/solve",
+    "pddl.planners": [
+        {
+            "kind": "PLANNING_AS_A_SERVICE_PREVIEW",
+            "url": "http://45.113.232.43/package",
+            "title": "http://45.113.232.43/package",
+            "canConfigure": true
+        },
+        {
+            "kind": "EXECUTABLE",
+            "canConfigure": true,
+            "path": "/Users/tom/tallpress/temporal-planning/bin/plan.py",
+            "title": "plan.py"
+        }
+    ],
+    "editor.formatOnType": true,
+    "[pddl]": {
+        "editor.bracketPairColorization.enabled": true
+    },
+    // "workbench.iconTheme": "vscode-icons",
+    "pddlPlanner.executionTarget": "Terminal",
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "--no-cov", // required to make Debug test work
+        "tests"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.mypyEnabled": true,
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "[yaml]": {
+        "editor.formatOnSave": false,
+        "editor.insertSpaces": false,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "gitlens.codeLens.scopes": [
+            "document"
+        ],
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
+    "files.autoSave": "afterDelay",
+    "githubPullRequests.pullBranch": "never",
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
+    ],
+    "workbench.activityBar.visible": false,
     "window.zoomLevel": -1
 }
