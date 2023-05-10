@@ -1,0 +1,156 @@
+[
+    {
+        "name": "eva++",
+        "rootPath": "/Users/tom/automata/eva++",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "automata_go",
+        "rootPath": "/Users/tom/go/src/bitbucket.org/automata_tech/automata_go",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "automata_cmake",
+        "rootPath": "/Users/tom/automata/automata_cmake",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "eva_frontend",
+        "rootPath": "/Users/tom/automata/eva_frontend",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "notes",
+        "rootPath": "/Users/tom/notes",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "playground",
+        "rootPath": "/Users/tom/go/src/bitbucket.org/automata_tech/playground",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "motion_control",
+        "rootPath": "/Users/tom/automata/motion_control",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "eva_python_sdk",
+        "rootPath": "/Users/tom/automata/eva_python_sdk",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "eva_examples",
+        "rootPath": "/Users/tom/automata/eva_examples",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "360jog",
+        "rootPath": "/Users/tom/automata/360jog",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "todevbot",
+        "rootPath": "/Users/tom/go/src/bitbucket.org/automata_tech/todevbot",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "myo",
+        "rootPath": "/Users/tom/automata/myo",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "internal_services",
+        "rootPath": "/Users/tom/automata/internal_services",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "common-protocols",
+        "rootPath": "/Users/tom/automata/common-protocols",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "labpods_frontend",
+        "rootPath": "/Users/tom/automata/labpods_frontend",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "opentrons-integration",
+        "rootPath": "/Users/tom/automata/opentrons-integration",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "hub",
+        "rootPath": "/Users/tom/automata/hub",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "platform-go",
+        "rootPath": "/Users/tom/go/src/github.com/automata/platform-go",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "platform-frontend",
+        "rootPath": "/Users/tom/automata/platform-frontend",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "platform-python",
+        "rootPath": "/Users/tom/automata/platform-python",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "drivers",
+        "rootPath": "/Users/tom/automata/drivers",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    },
+    {
+        "name": "hardware-testing",
+        "rootPath": "/Users/tom/automata/hardware-testing",
+        "paths": [],
+        "tags": [],
+        "enabled": true
+    }
+]
