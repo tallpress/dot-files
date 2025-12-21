@@ -200,3 +200,8 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 
+
+# tmux-sessioniser
+PATH="$PATH":"$HOME/.local/scripts/"
+bindkey -s ^f "tmux-sessionizer\n"
+
