@@ -19,6 +19,10 @@ call plug#begin()
 	Plug 'tpope/vim-fugitive'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'preservim/nerdcommenter'
+    Plug 'github/copilot.vim'
+    Plug 'junegunn/vim-easy-align'
+    Plug 'tpope/vim-commentary'
+    Plug 'stephpy/vim-yaml'
 call plug#end()
 
 " airline config
@@ -37,7 +41,7 @@ colorscheme codedark
 :set cursorline
 
 " show line numbers
-set number
+set number relativenumber
 
 " Switch syntax highlighting on
 syntax on
@@ -84,7 +88,4 @@ set tabstop=4
 set shiftwidth=4
 " " On pressing tab, insert 4 spaces
 set expandtab
-
-set spell
-
 

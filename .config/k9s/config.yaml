@@ -1,0 +1,14 @@
+# $XDG_CONFIG_HOME/k9s/config.yaml
+# Global skin is specified
+k9s:
+  logger:
+    textWrap: true
+  ui:
+    headless: true
+    logoless: true
+    crumbsless: false
+    noIcons: true
+    defaultsToFullScreen: true
+    splashless: true
+    # Toggles reactive UI. This option provide for watching on disk artifacts changes and update the UI live  Defaults to false.
+    skin: gruvbox-tom # => All clusters will use this skin unless otherwise specified in the context configuration file
