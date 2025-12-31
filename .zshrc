@@ -127,6 +127,7 @@ alias seaweedlocal="AWS_PROFILE=seaweed AWS_ACCESS_KEY_ID=automata AWS_SECRET_AC
 alias gfcua="git add . && gcfu HEAD"
 alias devdb='PGPASSWORD=dev psql -h localhost -p 5555 -U dev -d app -c'
 alias ghpr="gh pr create"
+alias v="vim"
 
 # Pure theme
 # fpath+=$HOME/.zsh/pure
@@ -204,4 +205,9 @@ eval "$(pyenv init -)"
 # tmux-sessioniser
 PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^h "tmux-sessionizer ~\n"
+bindkey -s '\e1' "tmux-sessionizer -s 0\n"
+bindkey -s '\e2' "tmux-sessionizer -s 1\n"
+bindkey -s '\e3' "tmux-sessionizer -s 2\n"
+bindkey -s '\e4' "tmux-sessionizer -s 3\n"
 
