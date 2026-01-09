@@ -15,11 +15,6 @@ subject = true     # NATS subject
 latency = false    # Response latency
 payload = true     # Message payload preview
 
-[connection]
-url = "nats.127.0.0.1.local.atmta.cloud:4222"
-user = "backend"
-password = "password"
-
 [[themes]]
 name = "gruvbox_dark"
 primary = "#fabd2f"       # bright_yellow - main accent
