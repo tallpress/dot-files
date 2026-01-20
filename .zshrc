@@ -122,7 +122,7 @@ alias ls="ls -la"
 alias todo='git grep -l TODO | xargs -n1 git blame -f -n -w | grep "$(git config user.name)" | grep TODO | sed "s/.\{9\}//" | sed "s/(.*)[[:space:]]*//" | sort'
 alias p='poetry'
 alias v="vim"
-alias seaweedlocal="AWS_PROFILE=seaweed AWS_ACCESS_KEY_ID=automata AWS_SECRET_ACCESS_KEY=automata stu --endpoint-url http://localhost:8333"
+alias seaweedlocal="AWS_PROFILE=seaweed AWS_ACCESS_KEY_ID=REPLACE_ME AWS_SECRET_ACCESS_KEY=REPLACE_ME stu --endpoint-url http://localhost:8333"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gfcua="git add . && gcfu HEAD"
 alias devdb='PGPASSWORD=dev psql -h localhost -p 5555 -U dev -d app -c'
@@ -210,4 +210,5 @@ bindkey -s '\e1' "tmux-sessionizer -s 0\n"
 bindkey -s '\e2' "tmux-sessionizer -s 1\n"
 bindkey -s '\e3' "tmux-sessionizer -s 2\n"
 bindkey -s '\e4' "tmux-sessionizer -s 3\n"
+
 
