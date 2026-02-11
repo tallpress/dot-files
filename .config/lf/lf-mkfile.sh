@@ -1,0 +1,5 @@
+#!/bin/sh
+my $file = prompt "Filename: ";
+open($file, :r, :create).close;
+run "lf", "-remote", "send {%*ENV<id>} select \"{$file.subst: '"', '\"', :g}\"";
+

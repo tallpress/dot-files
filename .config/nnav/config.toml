@@ -6,14 +6,22 @@ theme = "gruvbox_dark"
 [hide]
 inbox = true       # Hide _INBOX.* subjects
 jetstream = true   # Hide $JS.* subjects
+jetstream_ack = true  # Hide $JS.ACK.* subjects
+ack_abstract = true  
 
 [columns]
 marker = true      # Bookmark/import marker (★, I)
 time = true        # Timestamp
+acks = true        # Acknowledgments
 type = false       # Message type (REQ/RES/PUB)
 subject = true     # NATS subject
 latency = false    # Response latency
 payload = true     # Message payload preview
+
+[connection]
+url = "localhost:4222"
+user = "REPLACE_ME"
+password = "REPLACE_ME"
 
 [[themes]]
 name = "gruvbox_dark"

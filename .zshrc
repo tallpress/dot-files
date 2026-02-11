@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -106,6 +106,7 @@ export EDITOR='vim'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias vim="nvim"
 alias linq="/Users/tom/Library/Caches/pypoetry/virtualenvs/custom-driver-156LMkUX-py3.13/bin/linq"
 alias dc="docker compose"
 alias mp="multipass"
@@ -127,6 +128,7 @@ alias seaweedlocal="AWS_PROFILE=seaweed AWS_ACCESS_KEY_ID=REPLACE_ME AWS_SECRET_
 alias gfcua="git add . && gcfu HEAD"
 alias devdb='PGPASSWORD=dev psql -h localhost -p 5555 -U dev -d app -c'
 alias ghpr="gh pr create"
+alias gcfuap="git add . && git commit -a -m 'update' && ggpush" 
 alias v="vim"
 
 # Pure theme
@@ -208,7 +210,4 @@ bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^h "tmux-sessionizer ~\n"
 bindkey -s '\e1' "tmux-sessionizer -s 0\n"
 bindkey -s '\e2' "tmux-sessionizer -s 1\n"
-bindkey -s '\e3' "tmux-sessionizer -s 2\n"
-bindkey -s '\e4' "tmux-sessionizer -s 3\n"
-
 

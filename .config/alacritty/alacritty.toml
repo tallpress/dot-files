@@ -8,24 +8,29 @@ style = {shape="Block", blinking="Always"}
 # modifiers = "Command"
 
 [window.padding]
-x = 5
+x = 3
 y = 0
 
 [font]
 size = 13
 
 [font.normal]
-family = "Monaco"
+family = "BlexMono Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "Monaco"
+family = "BlexMono Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "Monaco"
+family = "BlexMono Nerd Font"
 style = "Italic"
 
 [font.bold_italic]
-family = "Monaco"
+family = "BlexMono Nerd Font"
 style = "Bold Italic"
+
+[window]
+option_as_alt = "OnlyLeft"
+opacity = 1
+
