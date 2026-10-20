@@ -1,0 +1,37 @@
+#!/bin/bash
+# Summarise yesterday's work into yesterday's daily note.
+#
+# Driven by the LaunchAgent tech.automata.standup-yesterday at 08:00 local.
+# Safe to run by hand at any time; re-running a day replaces its section
+# rather than duplicating it.
+
+set -uo pipefail
+
+CLAUDE=/opt/homebrew/bin/claude
+SKILL="$HOME/.claude/skills/standup"
+DATE=$(date -v-1d +%F)
+
+# Run from $HOME: it is not a git repo, so `git config user.email`
+# resolves to the global identity rather than some repo-local override.
+cd "$HOME" || exit 1
+
+echo "=== $(date '+%F %T') /standup for $DATE ==="
+
+# Scoped to exactly the two commands the skill runs. An unattended session
+# should not be able to run arbitrary shell.
+# No MCP servers. The Grafana ones spawn via `op`, which pops a 1Password
+# vault unlock — a modal prompt would hang this job at 8am with nobody there.
+# --strict-mcp-config makes the empty --mcp-config authoritative.
+"$CLAUDE" -p "/standup $DATE" \
+    --mcp-config '{"mcpServers":{}}' \
+    --strict-mcp-config \
+    --permission-mode acceptEdits \
+    --allowedTools \
+        "Bash(python3 $SKILL/ledger.py:*)" \
+        "Bash(python3 $SKILL/journal.py:*)" \
+        "Read" \
+        "Skill"
+
+status=$?
+echo "=== $(date '+%F %T') exit $status ==="
+exit $status

@@ -123,7 +123,6 @@ alias ls="ls -la"
 alias todo='git grep -l TODO | xargs -n1 git blame -f -n -w | grep "$(git config user.name)" | grep TODO | sed "s/.\{9\}//" | sed "s/(.*)[[:space:]]*//" | sort'
 alias p='poetry'
 alias v="vim"
-alias seaweedlocal="AWS_PROFILE=seaweed AWS_ACCESS_KEY_ID=REPLACE_ME AWS_SECRET_ACCESS_KEY=REPLACE_ME stu --endpoint-url http://localhost:8333"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gfcua="git add . && gcfu HEAD"
 alias devdb='PGPASSWORD=dev psql -h localhost -p 5555 -U dev -d app -c'
@@ -150,7 +149,6 @@ export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
-export CIRCLECI_CLI_TOKEN=511260c4e6c685c4d191888bf4db06198fb70a4a
 # z script
 #. /usr/local/etc/profile.d/z.sh
 export PATH=$PATH:~/google-cloud-sdk/bin:~/apps/z
@@ -187,9 +185,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-#. $HOME/.asdf/asdf.sh
-#. $HOME/.asdf/completions/asdf.bash
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -197,11 +192,6 @@ export KUBECONFIG=~/.kube/config
 
 # Created by `pipx` on 2024-10-15 15:43:08
 export PATH="$PATH:/Users/tom/.local/bin"
-
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
 
 
 # tmux-sessioniser
@@ -211,3 +201,34 @@ bindkey -s ^h "tmux-sessionizer ~\n"
 bindkey -s '\e1' "tmux-sessionizer -s 0\n"
 bindkey -s '\e2' "tmux-sessionizer -s 1\n"
 
+export MISE_LOCKED=0
+eval "$(mise activate zsh)"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+# Knowledge-aware Claude launcher (hook-based KB injection)
+export AI_USER="tallpress"
+export AI_MACHINE="Clementines-MBP"
+
+# Knowledge-aware Claude launcher (hook-based KB injection)
+cl() {
+    local args=("--dangerously-skip-permissions")
+    if [[ "${INJECT_ON_START:-true}" == "true" ]]; then
+        local kb_dir="/Users/tom/automata/agents/.local"
+        mkdir -p "$kb_dir"
+        find "$kb_dir" -name "*.kb" -mtime +1 -delete 2>/dev/null
+        export KB_FILE="$kb_dir/$$.\20260303.kb"
+        python3 /Users/tom/automata/agents/cli.py cards > "$KB_FILE" 2>/dev/null
+        local instruction
+        instruction=$(python3 /Users/tom/automata/agents/cli.py prompt 2>/dev/null)
+        [[ -n "$instruction" ]] && args+=("--append-system-prompt" "$instruction")
+        python3 /Users/tom/automata/agents/cli.py info 2>/dev/null
+    fi
+    claude "${args[@]}" "$@"
+}
+
+export GOPRIVATE=github.com/automata-tech/*
+export GONOSUMCHECK=github.com/automata-tech/*
+
+
+# Machine-local settings and secrets (not in git)
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

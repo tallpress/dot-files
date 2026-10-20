@@ -1,0 +1,19 @@
+#!/bin/bash
+# Build a tmux display-menu with numbered session entries (1-9)
+
+sessions=$(tmux list-sessions -F '#{session_name}' 2>/dev/null)
+[ -z "$sessions" ] && exit 0
+
+menu_args=()
+i=1
+while IFS= read -r name; do
+    [ "$i" -gt 9 ] && break
+    menu_args+=("$i: $name" "$i" "switch-client -t '$name'")
+    ((i++))
+done <<< "$sessions"
+
+tmux display-menu -T "" \
+    -s "bg=#282828,fg=#ebdbb2" \
+    -H "bg=#458588,fg=#282828" \
+    -S "fg=#3c3836" \
+    "${menu_args[@]}"

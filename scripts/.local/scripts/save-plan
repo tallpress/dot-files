@@ -1,0 +1,60 @@
+#!/bin/bash
+# PostToolUse(ExitPlanMode) hook: copy the just-approved Claude Code plan into the
+# Obsidian vault (Plans/) and link it from today's daily note under "## Working on".
+#
+# Claude Code writes the plan to a file in ~/.claude/plans/ before ExitPlanMode runs,
+# so we capture the most recently modified plan file at the moment this fires.
+
+vault="$HOME/notes"
+plans_src="${CLAUDE_PLANS_DIR:-$HOME/.claude/plans}"
+log="$vault/.plan-hook.log"
+
+# Drain the hook payload on stdin (we locate the plan by mtime, not payload).
+cat >/dev/null 2>&1
+
+src=$(ls -t "$plans_src"/*.md 2>/dev/null | head -1)
+if [ -z "$src" ] || [ ! -f "$src" ]; then
+    echo "$(date '+%F %T') no plan file in $plans_src" >> "$log"
+    exit 0
+fi
+
+date_str=$(date +%F)
+plans_dir="$vault/Plans"
+daily="$vault/Daily/$date_str.md"
+mkdir -p "$plans_dir" "$vault/Daily"
+
+title=$(grep -m1 -E '^#{1,6} ' "$src" | sed -E 's/^#+[[:space:]]*//')
+[ -z "$title" ] && title=$(basename "$src" .md)
+
+slug=$(basename "$src" .md | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g' | cut -c1-60)
+[ -z "$slug" ] && slug="plan"
+
+base="$date_str-$slug"
+note="$plans_dir/$base.md"
+
+if [ -f "$note" ]; then
+    echo "$(date '+%F %T') already captured $note" >> "$log"
+    exit 0
+fi
+
+{
+    printf -- '---\ntype: plan\nstatus: active\ncreated: %s\nsource: %s\n---\n' "$date_str" "$(basename "$src")"
+    cat "$src"
+} > "$note"
+
+if [ ! -f "$daily" ]; then
+    printf -- '---\ntype: daily\n---\n# %s\n\n## Todos\n- [ ]\n\n## Working on\n' "$date_str" > "$daily"
+fi
+
+grep -q '^## Working on' "$daily" || printf -- '\n## Working on\n' >> "$daily"
+
+link="- [[$base|$title]]"
+tmp=$(mktemp)
+awk -v link="$link" '
+    { print }
+    !done && /^## Working on[[:space:]]*$/ { print link; done=1 }
+' "$daily" > "$tmp" && mv "$tmp" "$daily"
+
+echo "$(date '+%F %T') saved $note; linked in $daily" >> "$log"
+printf '{"systemMessage":"Saved plan to notes/Plans/%s.md and linked it in the daily","suppressOutput":true}\n' "$base"
+exit 0

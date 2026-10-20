@@ -1,0 +1,30 @@
+#!/bin/bash
+# Open today's daily note, seeding a template (with a Todos section) if new.
+
+vault="$HOME/notes"
+date_str=$(date +%F)
+file="$vault/Daily/$date_str.md"
+
+if [ ! -f "$file" ]; then
+    mkdir -p "$vault/Daily"
+    cat > "$file" <<EOF
+---
+type: daily
+---
+# $date_str
+
+## Todos
+- [ ]
+
+## Working on
+
+EOF
+fi
+
+# Drop into the first empty todo line in insert mode if there is one.
+line=$(rg -n '^- \[ \] *$' "$file" | head -1 | cut -d: -f1)
+if [ -n "$line" ]; then
+    nvim "+$line" "+startinsert!" "$file"
+else
+    nvim "$file"
+fi
